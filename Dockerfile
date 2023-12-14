@@ -13,9 +13,6 @@ RUN dotnet publish ./Api.csproj -c Release -r linux-musl-x64 -o /app/out --no-re
 RUN rm /app/out/*.dbg /app/out/*.Development.json
 
 FROM mcr.microsoft.com/dotnet/runtime-deps:8.0-alpine
-RUN apk add --no-cache \
-    mkpasswd \
-    && rm -rf /var/cache/apk/*
 WORKDIR /app
 COPY --from=builder /app/out .
 USER $APP_UID
