@@ -10,7 +10,7 @@ RUN dotnet restore -r linux-musl-x64
 # Copy across the rest of the source files
 COPY . .
 RUN dotnet publish ./Api.csproj -c Release -r linux-musl-x64 -o /app/out --no-restore
-RUN rm /app/*.dbg /app/*.Development.json
+RUN rm /app/out/*.dbg /app/out/*.Development.json
 
 FROM mcr.microsoft.com/dotnet/runtime-deps:8.0-alpine
 RUN apk add --no-cache \

@@ -1,0 +1,14 @@
+**/bin
+**/obj
+**/out
+**/.vscode
+**/.vs
+.dotnet
+.Microsoft.DotNet.ImageBuilder
+
+node_modules
+build
+infrastructure
+.vs
+.vscode
+deploy
